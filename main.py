@@ -5,12 +5,14 @@ from tkinter import messagebox, filedialog
 
 class App():
     def __init__(self):
+        self.bg_label_color = "#D3D3D3"
+
         # Заголовок формы
         self.root = tk.Tk()
         self.root.title("YouTube Video Downloader")
         self.root.geometry("450x250")
-
-        self.bg_label_color = "#D3D3D3"
+        self.root.resizable(False, False)
+        self.root.config(bg=self.bg_label_color)
 
         lb = tk.Label(self.root, text="---Download video from YouTube---", font=("Arial,15,bold"), background=self.bg_label_color)
         lb.pack(pady=15)
