@@ -1,6 +1,7 @@
 import tkinter as tk
 import pytube
 from tkinter import messagebox, filedialog
+from folder_operations import open_folder
 
 
 class App():
@@ -79,6 +80,8 @@ class App():
             video.download(output_path=self.dir_path)
             # выводим результат
             messagebox.showinfo("Success", "Download complete")
+            open_folder(self.dir_path)
+
         except Exception as exc:
             messagebox.showerror("Error", str(exc))
 

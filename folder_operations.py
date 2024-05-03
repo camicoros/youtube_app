@@ -21,6 +21,9 @@ def open_folder(folder_name: str):
         "windows": open_folder_windows,
     }
 
+    folder_name = os.path.join(folder_name.replace("/", "\\"))
+    print(folder_name)
+
     platform_name = str(platform.system()).lower()
     try:
         PlATFORMS[platform_name](folder_name)
@@ -29,4 +32,4 @@ def open_folder(folder_name: str):
 
 
 if __name__ == "__main__":
-    open_folder("C:\\Users\\dd.saushkin\\Downloads")
+    open_folder(r"C:\Users\dd.saushkin\Downloads")
